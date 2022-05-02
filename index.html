@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>WordleCopy</title>
+  </head>
+  <body>
+    <div id="main-wrapper">
+
+      <div id="stat-win-wrapper" class="stats-wrapper">
+        <div class="menu-section-stats">
+          <!-- Stats-->
+          <h4 class="menu-section-stats-title">Statistics</h4>
+          
+            <div class="stat-wrapper stat-played-wrapper">
+              <span class="stat stat-played-num">0</span>
+              <span class="stat-name">Played</span>
+            </div>
+
+            <div class="stat-wrapper stat-win-wrapper">
+              <span class="stat stat-win-num">0</span>
+              <span class="stat-name">Win %</span>
+            </div>
+
+            <div class="stat-wrapper stat-streak-wrapper">
+              <span class="stat stat-streak-num">0</span>
+              <span class="stat-name">Current Streak</span>
+            </div>
+
+            <div class="stat-wrapper stat-max-wrapper">
+              <span class="stat stat-max-num">0</span>
+              <span class="stat-name">Max Streak</span>
+            </div>
+
+            <div class="reset-button">Play Again</div>
+          
+          </div>
+      
+      
+        </div>
+
+      <div class="msg-error">Error</div>
+
+      <header id="main-header">
+
+        <h3 id="main-header-help">?</h3>
+
+        <h1 id="main-header-title">WORDLE</h1>
+
+        <div id="main-header-menubutton">
+          <!-- The Menu buttons -->
+          <span id="bar1" class="bar"></span>
+          <span id="bar2" class="bar"></span>
+          <span id="bar3" class="bar"></span>
+        </div>
+      </header>
+
+      <main class="main-body">
+
+        <div class="main-body-gameboard">
+
+          <div class="gameboard-word active" data-rowNum="0" data-rowActive="true">
+            <input class="gameboard-word-letter active" max-length="1" value="">
+            <input class="gameboard-word-letter" max-length="1" value="">
+            <input class="gameboard-word-letter" max-length="1" value="">
+            <input class="gameboard-word-letter" max-length="1" value="">
+            <input class="gameboard-word-letter" max-length="1" value="">
+          </div>
+
+          <div class="gameboard-word" data-rowNum="1">
+            <input class="gameboard-word-letter" max-length="1">
+            <input class="gameboard-word-letter" max-length="1">
+            <input class="gameboard-word-letter" max-length="1">
+            <input class="gameboard-word-letter" max-length="1">
+            <input class="gameboard-word-letter" max-length="1">
+          </div>
+
+          <div class="gameboard-word" data-rowNum="2">
+            <input class="gameboard-word-letter" max-length="1">
+            <input class="gameboard-word-letter" max-length="1">
+            <input class="gameboard-word-letter" max-length="1">
+            <input class="gameboard-word-letter" max-length="1">
+            <input class="gameboard-word-letter" max-length="1">
+          </div>
+
+          <div class="gameboard-word" data-rowNum="3">
+            <input class="gameboard-word-letter" max-length="1">
+            <input class="gameboard-word-letter" max-length="1">
+            <input class="gameboard-word-letter" max-length="1">
+            <input class="gameboard-word-letter" max-length="1">
+            <input class="gameboard-word-letter" max-length="1">
+          </div>
+
+          <div class="gameboard-word" data-rowNum="4">
+            <input class="gameboard-word-letter" max-length="1">
+            <input class="gameboard-word-letter" max-length="1">
+            <input class="gameboard-word-letter" max-length="1">
+            <input class="gameboard-word-letter" max-length="1">
+            <input class="gameboard-word-letter" max-length="1">
+          </div>
+
+          <div class="gameboard-word" data-rowNum="5">
+            <input class="gameboard-word-letter" max-length="1">
+            <input class="gameboard-word-letter" max-length="1">
+            <input class="gameboard-word-letter" max-length="1">
+            <input class="gameboard-word-letter" max-length="1">
+            <input class="gameboard-word-letter" max-length="1">
+          </div>
+        </div>
+
+        <div class="main-body-keyboard">
+          <div class="keyboard-row keyboard-row1">
+            <span class="keyboard-key" data-keyValue="81">Q</span>
+            <span class="keyboard-key" data-keyValue="87">W</span>
+            <span class="keyboard-key" data-keyValue="69">E</span>
+            <span class="keyboard-key" data-keyValue="82">R</span>
+            <span class="keyboard-key" data-keyValue="84">T</span>
+            <span class="keyboard-key" data-keyValue="89">Y</span>
+            <span class="keyboard-key" data-keyValue="85">U</span>
+            <span class="keyboard-key" data-keyValue="73">I</span>
+            <span class="keyboard-key" data-keyValue="79">O</span>
+            <span class="keyboard-key" data-keyValue="80">P</span>
+          </div>
+
+          <div class="keyboard-row keyboard-row2">
+            <span class="keyboard-key" data-keyValue="65">A</span>
+            <span class="keyboard-key" data-keyValue="83">S</span>
+            <span class="keyboard-key" data-keyValue="68">D</span>
+            <span class="keyboard-key" data-keyValue="70">F</span>
+            <span class="keyboard-key" data-keyValue="71">G</span>
+            <span class="keyboard-key" data-keyValue="72">H</span>
+            <span class="keyboard-key" data-keyValue="74">J</span>
+            <span class="keyboard-key" data-keyValue="75">K</span>
+            <span class="keyboard-key" data-keyValue="76">L</span>
+          </div>
+
+          <div class="keyboard-row keyboard-row3">
+            <span class="special-key" data-keyValue="13">ENTER</span>
+            <span class="keyboard-key" data-keyValue="90">Z</span>
+            <span class="keyboard-key" data-keyValue="88">X</span>
+            <span class="keyboard-key" data-keyValue="67">C</span>
+            <span class="keyboard-key" data-keyValue="86">V</span>
+            <span class="keyboard-key" data-keyValue="66">B</span>
+            <span class="keyboard-key" data-keyValue="78">N</span>
+            <span class="keyboard-key" data-keyValue="77">M</span>
+            <span class="special-key" data-keyValue="8">⌫</span>
+          </div>
+        </div>
+      </main>
+
+      <article class="help-wrapper alt-page">
+        <div class="help-header">
+          <h3 class="help-title">How 2 Play</h3>
+
+          <div class="exit-help">x</div>
+        </div>
+
+        <div class="help-body">
+          <ul class="help-body-explain">
+            <li>Guess the word in 6 tries.</li>
+            <li>The word only contains 5 letters.</li>
+            <li>Random letters do not form a valid word.</li>
+            <li>After each word entered the tiles will change color.</li>
+          </ul>
+
+          <section class="help-body-examples">
+            <h4 class="examples-title">Examples</h4>
+
+            <div class="example example1">
+              <div class="example-diagram">
+                <span class="gameboard-word-letter green-block">A</span>
+                <span class="example-bord-letter">U</span>
+                <span class="example-bord-letter">D</span>
+                <span class="example-bord-letter">I</span>
+                <span class="example-bord-letter">O</span>
+              </div>
+
+              <div class="example-explain">
+                The letter <b>A</b> is in the word and is in the right position.
+              </div>
+            </div>
+
+            <div class="example example2">
+              <div class="example-diagram">
+                <span class="example-bord-letter">C</span>
+                <span class="example-bord-letter">R</span>
+                <span class="example-bord-letter">A</span>
+                <span class="example-bord-letter yellow-block">N</span>
+                <span class="example-bord-letter">E</span>
+              </div>
+
+              <div class="example-explain">
+                The letter <b>N</b> is in the word but in the wrong position.
+              </div>
+            </div>
+
+            <div class="example example3">
+              <div class="example-diagram">
+                <span class="example-bord-letter">N</span>
+                <span class="example-bord-letter">Y</span>
+                <span class="example-bord-letter grey-block">M</span>
+                <span class="example-bord-letter">P</span>
+                <span class="example-bord-letter">H</span>
+              </div>
+
+              <div class="example-explain">
+                The letter <b>M</b> is not in the word.
+              </div>
+            </div>
+          </section>
+        </div>
+      </article>
+
+      <!-- Menu Wrapper -->
+      <div id="menu-section" class="alt-page">
+        <!-- Menu Content-->
+
+        <header class="help-header">
+          <h3 class="help-title">Menu</h3>
+          <div class="exit-help">x</div>
+        </header>
+
+        <ul id="menu-section-settings">
+          <h4>Settings</h4>
+          <li>
+            Dark Mode
+            <label class="switch">
+              <input class="darkmode-switch" type="checkbox" />
+              <span class="slider"></span>
+            </label>
+          </li>
+        </ul>
+
+        <div class="menu-section-stats">
+          <!-- Stats-->
+          <h4 class="menu-section-stats-title">Statistics</h4>
+          
+            <div class="stat-wrapper stat-played-wrapper">
+              <span class="stat stat-played-num">0</span>
+              <span class="stat-name">Played</span>
+            </div>
+
+            <div class="stat-wrapper stat-win-wrapper">
+              <span class="stat stat-win-num">0</span>
+              <span class="stat-name">Win %</span>
+            </div>
+
+            <div class="stat-wrapper stat-streak-wrapper">
+              <span class="stat stat-streak-num">0</span>
+              <span class="stat-name">Current Streak</span>
+            </div>
+
+            <div class="stat-wrapper stat-max-wrapper">
+              <span class="stat stat-max-num">0</span>
+              <span class="stat-name">Max Streak</span>
+            </div>
+          
+          </div>
+
+      </div>
+      
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
